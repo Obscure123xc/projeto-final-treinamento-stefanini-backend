@@ -1,5 +1,6 @@
 package com.treinamento.stefanini.projeto.service;
 
+
 import java.util.List;
 import java.util.Optional;
 
@@ -27,4 +28,20 @@ public class ArmarioService {
 		}
 		return armario;
 	}
+	
+	/**public Armario save(Armario obj) throws TreinaException {
+		return repository.save(obj);
+	}
+	
+	 public Void deleteAll(Long id) throws TreinaException {
+		findById(id);
+		repository.deleteById(id);
+		return null;
+	}
+
+	
+	   public Armario fromDTO(Armario objDto) {
+		return new Armario(objDto.getId(), objDto.getNome(), objDto.getSituacao());
+	}*/
+	
 }

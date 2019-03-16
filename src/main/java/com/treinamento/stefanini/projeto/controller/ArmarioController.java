@@ -28,10 +28,19 @@ public class ArmarioController {
 	public @ResponseBody List<Armario> findAll() throws TreinaException {
 		return service.findAll();
 	}
-	
-	@RequestMapping(value = "/{id}",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody Optional<Armario> findById(@PathVariable Long id) throws TreinaException {
 		return service.findById(id);
 	}
-	
+
+	/**@RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody <Void> Object save(Armario objDto) throws TreinaException {
+		return service.save(objDto);
+	}
+
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody Void deleteAll(@PathVariable Long id) throws TreinaException {
+		return service.deleteAll(id);
+	}*/
 }
