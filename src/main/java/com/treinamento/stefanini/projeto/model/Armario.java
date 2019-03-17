@@ -1,8 +1,10 @@
 package com.treinamento.stefanini.projeto.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -33,8 +35,8 @@ public class Armario implements Serializable{
 	@Enumerated(EnumType.STRING)
 	private SituacaoEnum situacao;
 
-	@OneToMany(mappedBy = "armario")
-	private List<Camiseta> camisetas;
+	@OneToMany(mappedBy = "armario",cascade = CascadeType.ALL,orphanRemoval = true)
+	private List<Camiseta> camisetas = new ArrayList<>();
 
 	public Armario() {
 		super();

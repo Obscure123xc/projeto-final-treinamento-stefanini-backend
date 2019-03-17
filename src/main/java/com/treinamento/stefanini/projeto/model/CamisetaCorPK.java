@@ -11,7 +11,7 @@ public class CamisetaCorPK implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Column(name = "CA_NU")
-	private Long idCachorro;
+	private Long idCamiseta;
 
 	@Column(name = "CO_NU")
 	private Long idCor;
@@ -20,18 +20,18 @@ public class CamisetaCorPK implements Serializable{
 		super();
 	}
 
-	public CamisetaCorPK(Long idCachorro, Long idCor) {
+	public CamisetaCorPK(Long idCamiseta, Long idCor) {
 		super();
-		this.idCachorro = idCachorro;
+		this.idCamiseta = idCamiseta;
 		this.idCor = idCor;
 	}
 
-	public Long getIdCachorro() {
-		return idCachorro;
+	public Long getIdCamiseta() {
+		return idCamiseta;
 	}
 
-	public void setIdCachorro(Long idCachorro) {
-		this.idCachorro = idCachorro;
+	public void setIdCamiseta(Long idCamiseta) {
+		this.idCamiseta = idCamiseta;
 	}
 
 	public Long getIdCor() {
@@ -46,7 +46,7 @@ public class CamisetaCorPK implements Serializable{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((idCachorro == null) ? 0 : idCachorro.hashCode());
+		result = prime * result + ((idCamiseta == null) ? 0 : idCamiseta.hashCode());
 		result = prime * result + ((idCor == null) ? 0 : idCor.hashCode());
 		return result;
 	}
@@ -60,10 +60,10 @@ public class CamisetaCorPK implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		CamisetaCorPK other = (CamisetaCorPK) obj;
-		if (idCachorro == null) {
-			if (other.idCachorro != null)
+		if (idCamiseta == null) {
+			if (other.idCamiseta != null)
 				return false;
-		} else if (!idCachorro.equals(other.idCachorro))
+		} else if (!idCamiseta.equals(other.idCamiseta))
 			return false;
 		if (idCor == null) {
 			if (other.idCor != null)

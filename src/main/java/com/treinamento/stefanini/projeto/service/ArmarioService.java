@@ -1,6 +1,5 @@
 package com.treinamento.stefanini.projeto.service;
 
-
 import java.util.List;
 import java.util.Optional;
 
@@ -20,28 +19,22 @@ public class ArmarioService {
 	public List<Armario> findAll() throws TreinaException {
 		return (List<Armario>) repository.findAll();
 	}
-	
+
 	public Optional<Armario> findById(Long id) throws TreinaException {
 		Optional<Armario> armario = repository.findById(id);
-		if(armario == null) {
-			throw new TreinaException("Objeto nÃ£o encontrado"); 
+		if (armario == null) {
+			throw new TreinaException("Objeto não encontrado");
 		}
 		return armario;
 	}
-	
-	/**public Armario save(Armario obj) throws TreinaException {
-		return repository.save(obj);
-	}
-	
-	 public Void deleteAll(Long id) throws TreinaException {
-		findById(id);
-		repository.deleteById(id);
-		return null;
+
+	public Armario salvar(Armario armario) throws TreinaException {
+		return repository.save(armario);
 	}
 
-	
-	   public Armario fromDTO(Armario objDto) {
-		return new Armario(objDto.getId(), objDto.getNome(), objDto.getSituacao());
-	}*/
-	
+	public String excluir(Long id) throws TreinaException {
+		repository.deleteById(id);
+		return "Excluído com sucesso!";
+	}
+
 }
