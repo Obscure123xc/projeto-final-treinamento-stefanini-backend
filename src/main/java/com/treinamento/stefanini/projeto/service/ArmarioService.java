@@ -33,8 +33,8 @@ public class ArmarioService {
 	}
 	
 	public Armario editar(Armario armario) throws TreinaException {
-		if(armario != null) {
-			throw new TreinaException("Objeto não exixte");
+		if(armario == null) {
+			throw new TreinaException("Objeto não existe");
 		}
 		return repository.save(armario);
 	}
