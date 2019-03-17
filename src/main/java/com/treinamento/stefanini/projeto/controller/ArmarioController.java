@@ -42,6 +42,11 @@ public class ArmarioController {
 		return new ResponseEntity<>(service.salvar(armario),HttpStatus.OK);
 	}
 	
+	@RequestMapping(value = "/editar",method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Armario> editar(@RequestBody Armario armario) throws TreinaException {
+		return new ResponseEntity<>(service.salvar(armario),HttpStatus.OK);
+	}
+	
 	@RequestMapping(value = "/excluir/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Void>excluir(@PathVariable Long id) throws TreinaException {
 		service.excluir(id);

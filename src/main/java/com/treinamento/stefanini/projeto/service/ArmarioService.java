@@ -31,6 +31,13 @@ public class ArmarioService {
 	public Armario salvar(Armario armario) throws TreinaException {
 		return repository.save(armario);
 	}
+	
+	public Armario editar(Armario armario) throws TreinaException {
+		if(armario != null) {
+			throw new TreinaException("Objeto não exixte");
+		}
+		return repository.save(armario);
+	}
 
 	public String excluir(Long id) throws TreinaException {
 		repository.deleteById(id);
