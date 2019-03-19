@@ -39,7 +39,7 @@ public class ArmarioController {
 	
 	@RequestMapping(value = "/salvar",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Armario> salvar(@RequestBody Armario armario) throws TreinaException {
-		return new ResponseEntity<>(service.salvar(armario),HttpStatus.OK);
+		return new ResponseEntity<>(service.salvar(armario),HttpStatus.CREATED);
 	}
 	
 	@RequestMapping(value = "/editar",method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)

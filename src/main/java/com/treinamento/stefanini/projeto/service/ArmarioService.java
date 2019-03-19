@@ -29,12 +29,19 @@ public class ArmarioService {
 	}
 
 	public Armario salvar(Armario armario) throws TreinaException {
+		if (armario.getNome().length() > 20) {
+			throw new TreinaException("Numeros de caracteres maior que 20");
+		}
 		return repository.save(armario);
+
 	}
-	
+
 	public Armario editar(Armario armario) throws TreinaException {
-		if(armario == null) {
-			throw new TreinaException("Objeto não existe");
+		if (repository.findById(armario.getId()) == null) {
+			throw new TreinaException("Objeto Armario não existe");
+		}
+		if (armario.getNome().length() > 20) {
+			throw new TreinaException("Numeros de caracteres maior que 20");
 		}
 		return repository.save(armario);
 	}
