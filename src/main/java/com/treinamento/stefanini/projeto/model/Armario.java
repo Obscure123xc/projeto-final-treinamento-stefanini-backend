@@ -105,5 +105,4 @@ public class Armario implements Serializable{
 			return false;
 		return true;
 	}
-
 }

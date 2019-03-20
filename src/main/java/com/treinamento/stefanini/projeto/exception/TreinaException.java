@@ -7,5 +7,4 @@ public class TreinaException extends Exception {
 	public TreinaException(String mensagem) {
 		super(mensagem);
 	}
-
 }

@@ -32,7 +32,7 @@ public class ArmarioController {
 		return service.findAll();
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/buscar/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody Optional<Armario> findById(@PathVariable Long id) throws TreinaException {
 		return service.findById(id);
 	}
